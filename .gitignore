@@ -1,6 +1,12 @@
-# Ignorer les fichiers Python compilés
+# Dossiers à ignorer
 __pycache__/
-*.pyc
+.ipynb_checkpoints/
+.env/
+venv/
+models/
 
-# Ignorer les fichiers de modèle
+# Fichiers à ignorer
+*.pyc
+*.pkl
 *.joblib
+.DS_Store
