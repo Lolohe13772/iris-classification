@@ -1,16 +1,55 @@
-# Iris Classification
+Projet Iris Classification — Data Science
+Description
+Ce projet consiste à classifier les fleurs d’iris en trois espèces à partir de leurs caractéristiques physiques, en utilisant plusieurs modèles de machine learning.
+Données
+Les données proviennent du jeu de données classique Iris disponible dans la bibliothèque sklearn.datasets.
+Le dataset comprend 150 observations, chacune avec 4 caractéristiques : longueur et largeur des sépales et pétales.
+Étapes du projet
+Exploration des données
+Préparation et nettoyage (minimal ici car données propres)
+Modélisation avec plusieurs algorithmes : Decision Tree, SVM, KNN, Random Forest
+Évaluation via validation croisée
+Analyse des résultats (accuracy, matrice de confusion)
+Comparaison des modèles pour choisir le meilleur
+Résultats
+Le modèle KNN a obtenu la meilleure accuracy moyenne de 97,3 % avec une faible variance.
+La matrice de confusion montre une excellente séparation des classes, notamment une parfaite classification de Setosa.
 
-Ce projet est un exemple simple de classification de la célèbre base de données Iris avec scikit-learn.
+Installation et utilisation
 
-## Contenu
+Cloner le dépôt :
+git clone git@github.com:Lolohe13772/iris-classification.git
+cd iris-classification
 
-- `src/train.py` : script pour entraîner le modèle.
-- `src/predict.py` : script pour faire des prédictions avec le modèle entraîné.
-- `models/` : dossier où le modèle sauvegardé est stocké.
+Installer les dépendances :
+pip install -r requirements.txt
 
-## Instructions
+Utilisation des scripts :
 
-1. Installer les dépendances :
+Exploration des données :
+python3 iris_exploration.py
 
-```bash
-pip install scikit-learn pandas joblib
+Entraînement et évaluation des modèles :
+python3 iris_model.py
+
+Validation croisée :
+python3 iris_crossval.py
+
+
+Comparaison des modèles :
+python3 iris_compare_models.py
+
+Optimisation des hyperparamètres :
+python3 iris_gridsearch.py
+
+Évaluation finale (matrice de confusion et rapport de classification) :
+python3 iris_evaluation.py
+
+Résultats et conclusion
+Plusieurs modèles ont été testés, notamment Decision Tree, SVM, KNN et Random Forest.
+Le modèle KNN a obtenu la meilleure accuracy moyenne de 97,3 % après validation croisée.
+La validation croisée a permis d’assurer la robustesse et la généralisation des modèles, évitant le surapprentissage.
+La matrice de confusion finale montre une excellente classification des trois espèces d’iris sans erreur.
+Ce projet illustre les étapes clés d’un workflow de machine learning complet : exploration, modélisation, validation, comparaison et optimisation.
+
+Laurent Henon – Data Scientist
