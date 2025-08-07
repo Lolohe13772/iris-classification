@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify, render_template
 import joblib
-import numpy as np
+import os
 
 app = Flask(__name__)
-model = joblib.load("iris_model.pkl")
+
+# Chemin absolu vers le modèle
+model_path = os.path.join(os.path.dirname(__file__), "models", "iris_model.joblib")
+model = joblib.load(model_path)
 
 @app.route("/", methods=["GET", "POST"])
 def predict_form():
@@ -24,4 +27,3 @@ def predict_form():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
