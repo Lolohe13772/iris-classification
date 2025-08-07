@@ -45,6 +45,14 @@ python3 iris_gridsearch.py
 Évaluation finale (matrice de confusion et rapport de classification) :
 python3 iris_evaluation.py
 
+Pipeline et sauvegarde du modèle
+
+Un pipeline est utilisé pour enchaîner automatiquement les étapes de prétraitement (normalisation) et de classification (modèle KNN).  
+Cela garantit que les mêmes transformations sont appliquées aux données à chaque fois, facilitant ainsi la maintenance et la reproductibilité.  
+
+Le pipeline entraîné est sauvegardé dans un fichier (`iris_knn_pipeline.joblib`) pour pouvoir être rechargé facilement et utilisé en production sans réentraînement.
+
+
 Résultats et conclusion
 Plusieurs modèles ont été testés, notamment Decision Tree, SVM, KNN et Random Forest.
 Le modèle KNN a obtenu la meilleure accuracy moyenne de 97,3 % après validation croisée.
