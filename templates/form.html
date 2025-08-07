@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prédiction Iris</title>
+</head>
+<body>
+    <h1>Classification d'une fleur d'iris</h1>
+    <form method="post" action="/">
+        <label>Longueur du sépale:</label>
+        <input type="text" name="sepal_length"><br><br>
+
+        <label>Largeur du sépale:</label>
+        <input type="text" name="sepal_width"><br><br>
+
+        <label>Longueur du pétale:</label>
+        <input type="text" name="petal_length"><br><br>
+
+        <label>Largeur du pétale:</label>
+        <input type="text" name="petal_width"><br><br>
+
+        <button type="submit">Prédire</button>
+    </form>
+
+    {% if prediction is not none %}
+        <h2>Classe prédite : {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
