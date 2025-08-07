@@ -1,12 +1,11 @@
-from flask import Flask, request, jsonify, render_template
-import joblib
 import os
+import joblib
+from flask import Flask, request, render_template
 
-app = Flask(__name__)
-
-# Chemin absolu vers le modèle
 model_path = os.path.join(os.path.dirname(__file__), "models", "iris_model.joblib")
 model = joblib.load(model_path)
+
+app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def predict_form():
@@ -22,8 +21,8 @@ def predict_form():
             prediction = int(model.predict([features])[0])
         except Exception as e:
             prediction = f"Erreur : {e}"
-
     return render_template("form.html", prediction=prediction)
 
 if __name__ == "__main__":
     app.run(debug=True)
+
